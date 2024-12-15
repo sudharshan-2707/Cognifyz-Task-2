@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+         button:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background: url('/bg.png') no-repeat center center fixed; background-size: cover; height: 100vh; display: flex; justify-content: center; align-items: center; color: white;">
+    <div class="form-container" style="text-align: center; width: 100%; max-width: 400px;">
+        <h1 style="margin-bottom: 20px; font-size: 24px; letter-spacing: 2px;">Transparent Login Form</h1>
+        <form id="loginForm" action="/submit" method="POST" onsubmit="return validateForm()">
+            <!-- Full Name -->
+            <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                <i class="fas fa-user input-icon" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7);"></i>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter full name" style="width: 100%; padding: 12px 40px; background: transparent; color: white; border: none; border-bottom: 2px solid white; font-size: 16px; outline: none;" />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                <i class="fas fa-phone input-icon" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7);"></i>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" style="width: 100%; padding: 12px 40px; background: transparent; color: white; border: none; border-bottom: 2px solid white; font-size: 16px; outline: none;" />
+            </div>
+
+            <!-- Age -->
+            <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                <i class="fas fa-birthday-cake input-icon" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7);"></i>
+                <input type="number" id="age" name="age" placeholder="Your age" style="width: 100%; padding: 12px 40px; background: transparent; color: white; border: none; border-bottom: 2px solid white; font-size: 16px; outline: none;" />
+            </div>
+
+            <!-- Username -->
+            <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                <i class="fas fa-user-circle input-icon" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7);"></i>
+                <input type="text" id="username" name="username" placeholder="Enter username" style="width: 100%; padding: 12px 40px; background: transparent; color: white; border: none; border-bottom: 2px solid white; font-size: 16px; outline: none;" />
+            </div>
+
+            <!-- Email -->
+            <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                <i class="fas fa-envelope input-icon" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7);"></i>
+                <input type="email" id="email" name="email" placeholder="Enter email" style="width: 100%; padding: 12px 40px; background: transparent; color: white; border: none; border-bottom: 2px solid white; font-size: 16px; outline: none;" />
+            </div>
+
+            <!-- Password -->
+            <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                <i class="fas fa-lock input-icon" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7);"></i>
+                <input type="password" id="password" name="password" placeholder="Enter password" style="width: 100%; padding: 12px 40px; background: transparent; color: white; border: none; border-bottom: 2px solid white; font-size: 16px; outline: none;" />
+            </div>
+
+            <button class="btn" type="submit" style="background-color: transparent; border: 2px solid white; color: white; padding: 15px; font-size: 18px; border-radius: 50%; cursor: pointer;  transform: translateX(50%);"onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'; ">
+                <i class="fas fa-arrow-right button-icon" style="font-size: 20px;"></i>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var fullname = document.getElementById("fullname").value.trim();
+            var phone = document.getElementById("phone").value.trim();
+            var age = document.getElementById("age").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value.trim();
+
+            if (fullname === "" || phone === "" || age === "" || email === "" || password === "") {
+                alert("All fields are required.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
